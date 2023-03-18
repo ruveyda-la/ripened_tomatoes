@@ -49,7 +49,13 @@ def edit_show():
     return redirect (f'/show/{request.form["id"]}')
 
 
-# @app.route('/show/delete/<int:id>')
+@app.route('/show/delete/<int:id>')
+def delete_show(id):
+    if 'user_id' not in session:
+        return redirect('/')
+    Show.delete({'id':id})
+    return redirect('/dashboard')
+
 
     
 

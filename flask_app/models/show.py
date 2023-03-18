@@ -83,6 +83,12 @@ class Show():
         result=connectToMySQL(cls.db).query_db(query,data)
         return result
 
+    @classmethod
+    def delete(cls,data):
+        query = "DELETE FROM shows WHERE id=%(id)s"
+        result = connectToMySQL(cls.db).query_db(query,data)
+        return result
+
 
 
     

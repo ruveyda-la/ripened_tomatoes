@@ -26,9 +26,9 @@
                     <td>{{show.release_date}}</td>
                     <td>{{show.added_by.first_name}} {{show.added_by.last_name}}</td>
                     {% if show.user_id == session.user_id %}
-                    <td><a href="http://">view</a> | <a href="/show/edit/{{show.id}}">edit</a> | <a href="http://">delete</a></td>  
+                    <td><a href="/show/{{show.id}}">view</a> | <a href="/show/edit/{{show.id}}">edit</a> | <a href="/show/delete/{{show.id}}">delete</a></td>  
                     {% else %}
-                    <td><a href="http://">view</a> </td>
+                    <td><a href="/show/{{show.id}}">view</a> </td>
                     {% endif %}
                 </tr>
                 {% endfor %}
